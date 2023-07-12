@@ -1,0 +1,73 @@
+[package]
+authors = ["Karl Hobley <karlhobley10@gmail.com>", "Arkadiy Paronyan <arkadiy@ethcore.io>"]
+categories = ["api-bindings", "database", "external-ffi-bindings"]
+description = "Native bindings to libspeedb"
+edition = "2018"
+keywords = ["bindings", "ffi", "rocksdb"]
+license = "MIT/Apache-2.0/BSD-3-Clause"
+links = "speedb"
+name = "libspeedb-sys"
+readme = "README.md"
+repository = "https://github.com/rust-rocksdb/rust-rocksdb"
+rust-version = "1.60"
+version = "0.0.2+2.3.0"
+
+[build-dependencies.bindgen]
+default-features = false
+features = ["runtime"]
+version = "0.64"
+
+[build-dependencies.cc]
+features = ["parallel"]
+version = "1.0"
+
+[build-dependencies.glob]
+version = "0.3"
+
+[build-dependencies.pkg-config]
+optional = true
+version = "0.3"
+[dependencies.bzip2-sys]
+default-features = false
+optional = true
+version = "0.1"
+
+[dependencies.libc]
+version = "0.2"
+
+[dependencies.libz-sys]
+default-features = false
+optional = true
+version = "1.1"
+
+[dependencies.lz4-sys]
+optional = true
+version = "1.9"
+
+[dependencies.tikv-jemalloc-sys]
+features = ["unprefixed_malloc_on_supported_platforms"]
+optional = true
+version = "0.5"
+
+[dependencies.zstd-sys]
+features = ["zdict_builder"]
+optional = true
+version = "2.0"
+[dev-dependencies.const-cstr]
+version = "0.3"
+
+[dev-dependencies.uuid]
+features = ["v4"]
+version = "1.0"
+
+[features]
+bzip2 = ["bzip2-sys"]
+default = ["static"]
+io-uring = ["pkg-config"]
+jemalloc = ["tikv-jemalloc-sys"]
+lz4 = ["lz4-sys"]
+rtti = []
+snappy = []
+static = ["libz-sys?/static", "bzip2-sys?/static"]
+zlib = ["libz-sys"]
+zstd = ["zstd-sys"]

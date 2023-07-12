@@ -1,0 +1,11 @@
+*.swo
+target
+Cargo.lock
+*.orig
+*.bk
+*rlib
+tags
+path
+.DS_Store
+.idea
+.vscode
