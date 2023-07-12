@@ -1,6 +1,6 @@
-[submodule "speedb_sys/snappy"]
+[submodule "libspeedb-sys/snappy"]
 	path = libspeedb-sys/snappy
 	url = https://github.com/google/snappy.git
-[submodule "speedb_sys/speedb"]
+[submodule "libspeedb-sys/speedb"]
 	path = libspeedb-sys/speedb
 	url = https://github.com/speedb-io/speedb.git
