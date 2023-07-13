@@ -2,10 +2,9 @@
 
 #include <memory>
 
-#include "../rocksdb/version.h"
-/Users/lgal/Documents/gitprojects/rust-rocksdb/librocksdb-sys/speedb/include/rocksdb/version.h
+#include "rocksdb/version.h"
 #include "speedb/version.h"
-//#include "/Users/lgal/Documents/gitprojects/rust-rocksdb/libspeedb-sys/speedb/include/rocksdb/utilities/object_registry.h"
+#include "rocksdb/utilities/object_registry.h"
 #include "util/string_util.h"
 
 // The build script may replace these values with real values based
