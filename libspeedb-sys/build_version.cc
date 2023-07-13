@@ -9,8 +9,8 @@
 
 // The build script may replace these values with real values based
 // on whether or not GIT is available and the platform settings
-static const std::string speedb_build_git_sha  = "speedb_build_git_sha:ae78980a1f0beb39c8a73a07970cf455f531f40d";
-static const std::string speedb_build_git_tag = "speedb_build_git_tag:release/2.3";
+static const std::string speedb_build_git_sha  = "speedb_build_git_sha:041da08bad417b015aeb9908b22491fd84ec272f";
+static const std::string speedb_build_git_tag = "speedb_build_git_tag:release/2.5";
 #define HAS_GIT_CHANGES 0
 #if HAS_GIT_CHANGES == 0
 // If HAS_GIT_CHANGES is 0, the GIT date is used.

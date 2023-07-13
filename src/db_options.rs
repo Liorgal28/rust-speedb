@@ -78,13 +78,13 @@ impl Cache {
     /// block size and meta data block size is a reasonable choice that
     /// errs towards this side.
     pub fn new_hyper_clock_cache(capacity: size_t, estimated_entry_charge: size_t) -> Cache {
-        /*Cache(Arc::new(CacheWrapper {
+        Cache(Arc::new(CacheWrapper {
             inner: NonNull::new(unsafe {
                 ffi::rocksdb_cache_create_hyper_clock(capacity, estimated_entry_charge)
             })
             .unwrap(),
-        }))*/
-        unimplemented!();
+        }))
+        //unimplemented!();
     }
 
     /// Returns the cache memory usage in bytes.
@@ -3447,7 +3447,7 @@ impl ReadOptions {
     /// Default: `false`
     pub fn set_async_io(&mut self, v: bool) {
         unsafe {
-            ffi::rocksdb_readoptions_set_managed(self.inner, c_uchar::from(v));
+            ffi::rocksdb_readoptions_set_async_io(self.inner, c_uchar::from(v));
         }
     }
 }

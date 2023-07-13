@@ -926,7 +926,7 @@ impl<T: ThreadMode, D: DBInner> DBCommon<T, D> {
         opts: &FlushOptions,
     ) -> Result<(), Error> {
         let mut cfs = cfs.iter().map(|cf| cf.inner()).collect::<Vec<_>>();
-        for i in cfs {
+        /*for i in cfs {
             unsafe {
                 ffi_try!(ffi::rocksdb_flush_cf(
                 self.inner.inner(),
@@ -934,6 +934,14 @@ impl<T: ThreadMode, D: DBInner> DBCommon<T, D> {
                 i,
             ));
             }
+        }*/
+        unsafe {
+            ffi_try!(ffi::rocksdb_flush_cfs(
+                self.inner.inner(),
+                opts.inner,
+                cfs.as_mut_ptr(),
+                cfs.len() as libc::c_int,
+            ));
         }
         Ok(())
     }
